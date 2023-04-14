@@ -15,9 +15,7 @@ struct MainFooterViewLine: View {
     private var goal: String { String(activity.goal) }
     private var progress: String { String(activity.progress) }
     private var achievment: String { String(activity.achievement)}
-    private var color: Color {
-        activity.color ?? .black
-    }
+   
     
     
     var body: some View {
@@ -30,7 +28,7 @@ struct MainFooterViewLine: View {
             Text("\(achievment) %")
                
         }) .padding(.leading, 0.0)
-            .foregroundColor(color)
+            .foregroundColor(activity.arcThem.lightColor)
             .font(.headline)
             .fontWeight(.bold)
     }

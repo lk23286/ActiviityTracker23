@@ -12,31 +12,13 @@ struct Main {
     var activities: [Activity]
 }
 
-
-
-enum myColor: String, CaseIterable, Identifiable {
-    
-    case greenLight
-    case greenDark
-    case blueLight
-    case blueDark
-    case yellowLight
-    case yellowDark
-    case grayLight
-    case grayDark
-    
-    var mainColor: Color {
-        Color(rawValue)
-    }
-    
-    var name: String {
-        rawValue.capitalized
-    }
-    var id: String {
-        name
-    }
-    
+struct K {
+    static var greenLight = "greenLight"
+    static var greenDark = "greenDark"
 }
+
+
+
 
 
 

@@ -10,45 +10,43 @@ import SwiftUI
 
 struct Activity: Identifiable {
     
-    var id: UUID
-    var name: String
-    var goal: Double
-    var progress: Double
-    var subActivities: [Activity]?
-    var color: Color?
-    var arcIndex: Int
+    let id: UUID
+    let name: String
+    let goal: Double
+    let progress: Double
+    let subActivities: [Activity]?
+    let arcThem: ArcTheme
     
-    
-    var achievement: Double {
-        progress / goal * 100.0
+    var achievement: Int {
+       Int( progress / goal * 100.0 )
     }
 
-    init(id: UUID = UUID(), name: String, goal: Double, progress: Double, subActivities: [Activity]? = nil, color: Color? = nil, arcIndex: Int) {
+    init(id: UUID = UUID(), name: String, goal: Double, progress: Double, subActivities: [Activity]? = nil, arcTheme: ArcTheme) {
         self.id = id
         self.name = name
         self.goal = goal
         self.progress = progress
         self.subActivities = subActivities
-        self.color = color
-        self.arcIndex = arcIndex
+        self.arcThem = arcTheme
         
     }
-    
-    
 }
 
 extension Activity {
+    
     static let sample: [Activity] = [
-        Activity( name: "Swift", goal: 3.0, progress: 0.6, subActivities: [
-            Activity(name: "Bible", goal: 0.5, progress: 0.2, arcIndex: 1),
-            Activity(name: "Project", goal: 1.0, progress: 0.6, arcIndex: 2),
-            Activity(name: "Udemy", goal: 0.2, progress: 0.1, arcIndex: 3),
-            Activity(name: "Education", goal: 1.0, progress: 0.4, arcIndex: 4)
-        ], color: .green, arcIndex: 1),
-        Activity(name: "Sport", goal: 0.5, progress: 0.8, color: .blue, arcIndex: 2),
-        Activity(name: "Mediation", goal: 0.5, progress: 0.4, color: .yellow, arcIndex: 3),
-        Activity(name: "Sleep", goal: 8, progress: 6, color: .gray, arcIndex: 4)
-      ]
+        Activity(name: "Swift", goal: 5, progress: 1, subActivities: [
+                    Activity(name: "Bible", goal: 1, progress: 0.7, arcTheme: ArcTheme.sample[0]),
+                    Activity(name: "Project", goal: 1, progress: 0.3, arcTheme: ArcTheme.sample[1]),
+                    Activity(name: "Udemy", goal: 1.5, progress: 0.6, arcTheme: ArcTheme.sample[2]),
+                    Activity(name: "Education", goal: 0.5, progress: 0.8, arcTheme: ArcTheme.sample[3])
+        ], arcTheme: ArcTheme.sample[0]),
+        Activity(name: "Sport", goal: 5, progress: 2, arcTheme: ArcTheme.sample[1]),
+        Activity(name: "Meditation", goal: 5, progress: 3, arcTheme: ArcTheme.sample[2]),
+        Activity(name: "Sleep", goal: 5, progress: 4, arcTheme: ArcTheme.sample[3])
+    
+    ]
+    
 }
 
 

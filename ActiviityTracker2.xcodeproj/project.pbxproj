@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB429E9D6C700337F41 /* ArcTheme.swift */; };
 		85AB8BE329E5E62F0066A2C8 /* ActiviityTracker2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */; };
 		85AB8BE529E5E62F0066A2C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BE429E5E62F0066A2C8 /* ContentView.swift */; };
 		85AB8BE729E5E6330066A2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB8BE629E5E6330066A2C8 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8552AFB429E9D6C700337F41 /* ArcTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcTheme.swift; sourceTree = "<group>"; };
 		85AB8BDF29E5E62F0066A2C8 /* ActiviityTracker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiviityTracker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviityTracker2App.swift; sourceTree = "<group>"; };
 		85AB8BE429E5E62F0066A2C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,9 +80,9 @@
 				85AB8BF729E5F74A0066A2C8 /* MainHeaderView.swift */,
 				85AB8BF929E5F77A0066A2C8 /* MainDiagramView.swift */,
 				85AB8C0129E6D6EC0066A2C8 /* ArcView.swift */,
-				85AB8C0329E6F6330066A2C8 /* Test.swift */,
 				85AB8BFB29E5F7AC0066A2C8 /* MainFooterView.swift */,
 				85AB8BFD29E67B380066A2C8 /* MainFooterViewLine.swift */,
+				85AB8C0329E6F6330066A2C8 /* Test.swift */,
 				85AB8BE629E5E6330066A2C8 /* Assets.xcassets */,
 				85AB8BE829E5E6330066A2C8 /* Preview Content */,
 			);
@@ -101,6 +103,7 @@
 				85AB8BF329E5E7B70066A2C8 /* Main.swift */,
 				85AB8C0529E70A2E0066A2C8 /* DiagramArc.swift */,
 				85AB8BFF29E6C4120066A2C8 /* Activtiy.swift */,
+				8552AFB429E9D6C700337F41 /* ArcTheme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				85AB8C0229E6D6EC0066A2C8 /* ArcView.swift in Sources */,
 				85AB8BF429E5E7B70066A2C8 /* Main.swift in Sources */,
 				85AB8BFE29E67B380066A2C8 /* MainFooterViewLine.swift in Sources */,
+				8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */,
 				85AB8BF629E5F31E0066A2C8 /* MainView.swift in Sources */,
 				85AB8C0429E6F6330066A2C8 /* Test.swift in Sources */,
 				85AB8BFA29E5F77A0066A2C8 /* MainDiagramView.swift in Sources */,

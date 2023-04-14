@@ -16,8 +16,6 @@ struct MainFooterView: View {
     var body: some View {
         
         List {
- 
-          
                 ForEach(activities) { activity in
                    MainFooterViewLine(activity: activity)
                 }

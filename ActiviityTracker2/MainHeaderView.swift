@@ -17,13 +17,15 @@ struct MainHeaderView: View {
             List {
                 ForEach(main.activities) { activity in
                         Text(activity.name)
-                            .font(.title2)
-                            .foregroundColor(activity.color)
+                        .font(.title2)
+                            .foregroundColor(activity.arcThem.lightColor)
                             .fontWeight(.heavy)
-                            
+                           
                 }
+                
             }
-
+           
+            
 
     }
       

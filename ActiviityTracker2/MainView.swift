@@ -9,10 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State var main: Main
+   var main: Main
     
     var body: some View {
-      
+        
         VStack {
             MainHeaderView(main: main)
             Spacer()
@@ -20,7 +20,7 @@ struct MainView: View {
             Spacer()
             MainFooterView(activities: main.activities)
         }
-            
+       
     }
         
 }
