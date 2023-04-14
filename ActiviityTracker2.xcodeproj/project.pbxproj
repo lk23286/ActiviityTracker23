@@ -20,7 +20,6 @@
 		85AB8BFE29E67B380066A2C8 /* MainFooterViewLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BFD29E67B380066A2C8 /* MainFooterViewLine.swift */; };
 		85AB8C0029E6C4130066A2C8 /* Activtiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BFF29E6C4120066A2C8 /* Activtiy.swift */; };
 		85AB8C0229E6D6EC0066A2C8 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8C0129E6D6EC0066A2C8 /* ArcView.swift */; };
-		85AB8C0429E6F6330066A2C8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8C0329E6F6330066A2C8 /* Test.swift */; };
 		85AB8C0629E70A2E0066A2C8 /* DiagramArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8C0529E70A2E0066A2C8 /* DiagramArc.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		85AB8BFD29E67B380066A2C8 /* MainFooterViewLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFooterViewLine.swift; sourceTree = "<group>"; };
 		85AB8BFF29E6C4120066A2C8 /* Activtiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activtiy.swift; sourceTree = "<group>"; };
 		85AB8C0129E6D6EC0066A2C8 /* ArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
-		85AB8C0329E6F6330066A2C8 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		85AB8C0529E70A2E0066A2C8 /* DiagramArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagramArc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +80,6 @@
 				85AB8C0129E6D6EC0066A2C8 /* ArcView.swift */,
 				85AB8BFB29E5F7AC0066A2C8 /* MainFooterView.swift */,
 				85AB8BFD29E67B380066A2C8 /* MainFooterViewLine.swift */,
-				85AB8C0329E6F6330066A2C8 /* Test.swift */,
 				85AB8BE629E5E6330066A2C8 /* Assets.xcassets */,
 				85AB8BE829E5E6330066A2C8 /* Preview Content */,
 			);
@@ -184,7 +181,6 @@
 				85AB8BFE29E67B380066A2C8 /* MainFooterViewLine.swift in Sources */,
 				8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */,
 				85AB8BF629E5F31E0066A2C8 /* MainView.swift in Sources */,
-				85AB8C0429E6F6330066A2C8 /* Test.swift in Sources */,
 				85AB8BFA29E5F77A0066A2C8 /* MainDiagramView.swift in Sources */,
 				85AB8C0029E6C4130066A2C8 /* Activtiy.swift in Sources */,
 				85AB8BE529E5E62F0066A2C8 /* ContentView.swift in Sources */,
