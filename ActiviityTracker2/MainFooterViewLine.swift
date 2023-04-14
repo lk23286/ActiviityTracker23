@@ -31,7 +31,9 @@ struct MainFooterViewLine: View {
             .foregroundColor(activity.arcThem.lightColor)
             .font(.headline)
             .fontWeight(.bold)
+            
     }
+        
 }
 
 struct MainFooterViewLine_Previews: PreviewProvider {

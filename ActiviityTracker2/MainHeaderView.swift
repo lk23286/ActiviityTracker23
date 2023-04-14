@@ -10,25 +10,20 @@ import SwiftUI
 struct MainHeaderView: View {
     
     var main: Main
-     
+    
     var body: some View {
-       
- 
-            List {
-                ForEach(main.activities) { activity in
-                        Text(activity.name)
-                        .font(.title2)
-                            .foregroundColor(activity.arcThem.lightColor)
-                            .fontWeight(.heavy)
-                           
-                }
-                
+        
+        List {
+            ForEach(main.activities) { activity in
+                Text(activity.name)
+                    .font(.title2)
+                    .foregroundColor(activity.arcThem.lightColor)
+                    .fontWeight(.heavy)
             }
-           
             
-
+        }
     }
-      
+    
 }
 
 struct MainHeaderView_Previews: PreviewProvider {

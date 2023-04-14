@@ -12,11 +12,6 @@ struct Main {
     var activities: [Activity]
 }
 
-struct K {
-    static var greenLight = "greenLight"
-    static var greenDark = "greenDark"
-}
-
 
 
 
