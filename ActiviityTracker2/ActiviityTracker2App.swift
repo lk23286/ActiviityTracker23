@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ActiviityTracker2App: App {
+    
+    var main = Main(activities: Activity.sample)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           MainView(main: main)
         }
     }
 }

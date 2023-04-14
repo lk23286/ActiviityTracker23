@@ -12,9 +12,8 @@ struct Main {
     var activities: [Activity]
 }
 
-
-
-
-
+struct K {
+    static var backgroundGray = "bkgGray"
+}
 
 

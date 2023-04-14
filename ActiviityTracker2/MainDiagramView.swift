@@ -11,20 +11,18 @@ struct MainDiagramView: View {
     
     var activities: [Activity]
     
-
     var body: some View {
         Circle()
             .strokeBorder(lineWidth: 0)
-            .background(Color("darkGrey")
+            .background(Color(K.backgroundGray)
             )
             .overlay {
                 ForEach(activities) { activity in
                     ArcView(achivement: activity.achievement, archTheme: activity.arcThem)
-                   
                     
                 }
             }
-          
+            .background(Color(K.backgroundGray))
     }
 }
 

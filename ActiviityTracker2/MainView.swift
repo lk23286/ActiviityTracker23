@@ -13,8 +13,7 @@ struct MainView: View {
     
     var body: some View {
         
-       
-        
+
         VStack {
             MainHeaderView(main: main)
             Spacer()
@@ -22,6 +21,7 @@ struct MainView: View {
             Spacer()
             MainFooterView(activities: main.activities)
         }
+        .background(Color(K.backgroundGray))
        
     }
         
