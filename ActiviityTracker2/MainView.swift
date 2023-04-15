@@ -9,19 +9,30 @@ import SwiftUI
 
 struct MainView: View {
     
-   var main: Main
+   @Binding var activities: [Activity]
     
     var body: some View {
         
-
         VStack {
-            MainHeaderView(main: main)
+            
+            List {
+                ForEach(activities) { activity in
+    
+                    NavigationLink(destination: SubView(subActivities: activity.subActivities ?? [])) {
+        
+                        MainHeaderView(activity: activity)
+                    }
+                    .listRowBackground(activity.arcThem.paperColor)
+                }
+            }
+
+            MainDiagramView(activities: activities)
             Spacer()
-            MainDiagramView(activities: main.activities)
-            Spacer()
-            MainFooterView(activities: main.activities)
+            MainFooterView(activities: activities)
         }
         .background(Color(K.backgroundGray))
+        .navigationTitle("Main Activity")
+
        
     }
         
@@ -29,8 +40,15 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     
-    static var main: Main = Main(activities: Activity.sample)
+    static var main: Main = Main(activities: Activity.lightSample)
     static var previews: some View {
-        MainView(main: main)
+        NavigationView {
+            MainView(activities: .constant(Activity.lightSample))
+        }
+        
+        
+        
+        
+      
     }
 }

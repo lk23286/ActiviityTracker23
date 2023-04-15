@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct ActiviityTracker2App: App {
     
-    var main = Main(activities: Activity.sample)
+    @State private var activities = Activity.lightSample
     
     var body: some Scene {
         WindowGroup {
-           MainView(main: main)
+            NavigationView {
+                MainView(activities: $activities)
+            }
+          
         }
     }
 }

@@ -13,16 +13,18 @@ struct ArcTheme {
     let arcNumber: Int
     let inkColor: Color
     let paperColor: Color
+    let opacity: Double
     
-    init(arcNumber: Int, inkColor: Color, paperColor: Color) {
+    init(arcNumber: Int, inkColor: Color, paperColor: Color, opacity: Double = 0.05) {
         self.arcNumber = arcNumber
         self.inkColor = inkColor
         self.paperColor = paperColor
+        self.opacity = opacity
     }
 }
 
 extension ArcTheme {
-    static var sampleToDarkBackground: [ArcTheme] = [
+    static var lightSample: [ArcTheme] = [
         
         ArcTheme(arcNumber: 1, inkColor: Theme.lightGreenInk.color, paperColor: Theme.lightGreenPaper.color),
         ArcTheme(arcNumber: 2, inkColor: Theme.lightBlueInk.color, paperColor: Theme.lightBluePaper.color),
@@ -30,12 +32,12 @@ extension ArcTheme {
         ArcTheme(arcNumber: 4, inkColor: Theme.lightGrayInk.color, paperColor: Theme.lightGrayPaper.color)
     ]
     
-    static var sampleToLightBackground: [ArcTheme] = [
+    static var darkSample: [ArcTheme] = [
         
-        ArcTheme(arcNumber: 1, inkColor: Theme.lightGreenInk.color, paperColor: Theme.lightGreenPaper.color),
-        ArcTheme(arcNumber: 2, inkColor: Theme.lightBlueInk.color, paperColor: Theme.lightBluePaper.color),
-        ArcTheme(arcNumber: 3, inkColor: Theme.lightYellowInk.color, paperColor: Theme.lightYellowPaper.color),
-        ArcTheme(arcNumber: 4, inkColor: Theme.lightGrayInk.color, paperColor: Theme.lightGrayPaper.color)
+        ArcTheme(arcNumber: 1, inkColor: Theme.darkGreenInk.color, paperColor: Theme.darkGreenPaper.color),
+        ArcTheme(arcNumber: 2, inkColor: Theme.darkBlueInk.color, paperColor: Theme.darkBluePaper.color),
+        ArcTheme(arcNumber: 3, inkColor: Theme.darkYellowInk.color, paperColor: Theme.darkYellowPaper.color),
+        ArcTheme(arcNumber: 4, inkColor: Theme.darkGrayInk.color, paperColor: Theme.darkGrayPaper.color)
     ]
     
 }

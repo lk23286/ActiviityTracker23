@@ -15,8 +15,9 @@ struct ArcView: View {
     var body: some View {
         
         DiagramArc(number: archTheme.arcNumber, percent: 100)
-            .stroke(archTheme.paperColor, lineWidth: 22)
+            .stroke(archTheme.inkColor, lineWidth: 22)
             .brightness(0.0)
+            .opacity(archTheme.opacity)
            
             .overlay {
                 DiagramArc(number: archTheme.arcNumber, percent: achivement)
@@ -30,7 +31,7 @@ struct ArcView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        var arcTheme: ArcTheme = ArcTheme.sampleToDarkBackground[0]
+        var arcTheme: ArcTheme = ArcTheme.lightSample[0]
         ArcView( achivement: 30, archTheme: arcTheme)
     }
 }

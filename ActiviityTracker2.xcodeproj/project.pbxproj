@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB429E9D6C700337F41 /* ArcTheme.swift */; };
+		8552AFB729EADF6900337F41 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB629EADF6900337F41 /* SubView.swift */; };
 		85AB8BE329E5E62F0066A2C8 /* ActiviityTracker2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */; };
-		85AB8BE529E5E62F0066A2C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BE429E5E62F0066A2C8 /* ContentView.swift */; };
 		85AB8BE729E5E6330066A2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB8BE629E5E6330066A2C8 /* Assets.xcassets */; };
 		85AB8BEA29E5E6330066A2C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB8BE929E5E6330066A2C8 /* Preview Assets.xcassets */; };
 		85AB8BF429E5E7B70066A2C8 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BF329E5E7B70066A2C8 /* Main.swift */; };
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		8552AFB429E9D6C700337F41 /* ArcTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcTheme.swift; sourceTree = "<group>"; };
+		8552AFB629EADF6900337F41 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		85AB8BDF29E5E62F0066A2C8 /* ActiviityTracker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiviityTracker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviityTracker2App.swift; sourceTree = "<group>"; };
-		85AB8BE429E5E62F0066A2C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85AB8BE629E5E6330066A2C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AB8BE929E5E6330066A2C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85AB8BF329E5E7B70066A2C8 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 			children = (
 				85AB8BF029E5E7780066A2C8 /* Model */,
 				85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */,
-				85AB8BE429E5E62F0066A2C8 /* ContentView.swift */,
 				85AB8BF529E5F31E0066A2C8 /* MainView.swift */,
+				8552AFB629EADF6900337F41 /* SubView.swift */,
 				85AB8BF729E5F74A0066A2C8 /* MainHeaderView.swift */,
 				85AB8BF929E5F77A0066A2C8 /* MainDiagramView.swift */,
 				85AB8C0129E6D6EC0066A2C8 /* ArcView.swift */,
@@ -183,9 +183,9 @@
 				85AB8BF629E5F31E0066A2C8 /* MainView.swift in Sources */,
 				85AB8BFA29E5F77A0066A2C8 /* MainDiagramView.swift in Sources */,
 				85AB8C0029E6C4130066A2C8 /* Activtiy.swift in Sources */,
-				85AB8BE529E5E62F0066A2C8 /* ContentView.swift in Sources */,
 				85AB8BFC29E5F7AC0066A2C8 /* MainFooterView.swift in Sources */,
 				85AB8C0629E70A2E0066A2C8 /* DiagramArc.swift in Sources */,
+				8552AFB729EADF6900337F41 /* SubView.swift in Sources */,
 				85AB8BE329E5E62F0066A2C8 /* ActiviityTracker2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

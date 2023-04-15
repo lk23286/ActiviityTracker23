@@ -30,9 +30,9 @@ struct MainFooterView: View {
 
 struct MainFooterView_Previews: PreviewProvider {
     
-    static var main: Main = Main(activities: Activity.sample)
+    static var main: Main = Main(activities: Activity.darkSample)
     
-    static var activities: [Activity] = Activity.sample
+    static var activities: [Activity] = Activity.darkSample
     
     static var previews: some View {
         MainFooterView(activities: activities)

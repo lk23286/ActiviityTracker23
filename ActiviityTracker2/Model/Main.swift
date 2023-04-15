@@ -15,5 +15,3 @@ struct Main {
 struct K {
     static var backgroundGray = "bkgGray"
 }
-
-

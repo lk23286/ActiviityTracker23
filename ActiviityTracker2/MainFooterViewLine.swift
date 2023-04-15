@@ -38,7 +38,7 @@ struct MainFooterViewLine: View {
 
 struct MainFooterViewLine_Previews: PreviewProvider {
     
-    static let activity: Activity = Activity.sample[0]
+    static let activity: Activity = Activity.darkSample[0]
     
     
     static var previews: some View {

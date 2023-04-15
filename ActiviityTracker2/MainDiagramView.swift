@@ -28,8 +28,8 @@ struct MainDiagramView: View {
 
 struct MainDiagramView_Previews: PreviewProvider {
     
-    static var activities: [Activity] = Activity.sample
-    static var arcThemes: [ArcTheme] = ArcTheme.sampleToDarkBackground
+    static var activities: [Activity] = Activity.darkSample
+    static var arcThemes: [ArcTheme] = ArcTheme.lightSample
     
     static var previews: some View {
         MainDiagramView(activities: activities)
