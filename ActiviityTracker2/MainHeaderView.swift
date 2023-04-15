@@ -17,7 +17,7 @@ struct MainHeaderView: View {
             ForEach(main.activities) { activity in
                 Text(activity.name)
                     .font(.title2)
-                    .foregroundColor(activity.arcThem.lightColor)
+                    .foregroundColor(activity.arcThem.inkColor)
                     .fontWeight(.heavy)
             }
             

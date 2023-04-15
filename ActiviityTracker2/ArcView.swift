@@ -15,13 +15,13 @@ struct ArcView: View {
     var body: some View {
         
         DiagramArc(number: archTheme.arcNumber, percent: 100)
-            .stroke(archTheme.darkColor, lineWidth: 22)
+            .stroke(archTheme.paperColor, lineWidth: 22)
             .brightness(0.0)
            
             .overlay {
                 DiagramArc(number: archTheme.arcNumber, percent: achivement)
                     .rotation(Angle(degrees: -90))
-                    .stroke(archTheme.lightColor, lineWidth: 22)
+                    .stroke(archTheme.inkColor, lineWidth: 22)
             }
     }
 }
@@ -30,7 +30,7 @@ struct ArcView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        var arcTheme: ArcTheme = ArcTheme.sample[0]
+        var arcTheme: ArcTheme = ArcTheme.sampleToDarkBackground[0]
         ArcView( achivement: 30, archTheme: arcTheme)
     }
 }

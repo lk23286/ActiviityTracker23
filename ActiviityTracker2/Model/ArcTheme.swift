@@ -11,36 +11,54 @@ import SwiftUI
 struct ArcTheme {
     
     let arcNumber: Int
-    let lightColor: Color
-    let darkColor: Color
+    let inkColor: Color
+    let paperColor: Color
     
-    init(arcNumber: Int, lightColor: Color, darkColor: Color) {
+    init(arcNumber: Int, inkColor: Color, paperColor: Color) {
         self.arcNumber = arcNumber
-        self.lightColor = lightColor
-        self.darkColor = darkColor
+        self.inkColor = inkColor
+        self.paperColor = paperColor
     }
 }
 
 extension ArcTheme {
-    static var sample: [ArcTheme] = [
+    static var sampleToDarkBackground: [ArcTheme] = [
         
-        ArcTheme(arcNumber: 1, lightColor: Theme.greenLight.color, darkColor: Theme.greenDark.color),
-        ArcTheme(arcNumber: 2, lightColor: Theme.blueLight.color, darkColor: Theme.blueDark.color),
-        ArcTheme(arcNumber: 3, lightColor: Theme.yellowLight.color, darkColor: Theme.yellowDark.color),
-        ArcTheme(arcNumber: 4, lightColor: Theme.grayLight.color, darkColor: Theme.grayDark.color)
+        ArcTheme(arcNumber: 1, inkColor: Theme.lightGreenInk.color, paperColor: Theme.lightGreenPaper.color),
+        ArcTheme(arcNumber: 2, inkColor: Theme.lightBlueInk.color, paperColor: Theme.lightBluePaper.color),
+        ArcTheme(arcNumber: 3, inkColor: Theme.lightYellowInk.color, paperColor: Theme.lightYellowPaper.color),
+        ArcTheme(arcNumber: 4, inkColor: Theme.lightGrayInk.color, paperColor: Theme.lightGrayPaper.color)
     ]
+    
+    static var sampleToLightBackground: [ArcTheme] = [
+        
+        ArcTheme(arcNumber: 1, inkColor: Theme.lightGreenInk.color, paperColor: Theme.lightGreenPaper.color),
+        ArcTheme(arcNumber: 2, inkColor: Theme.lightBlueInk.color, paperColor: Theme.lightBluePaper.color),
+        ArcTheme(arcNumber: 3, inkColor: Theme.lightYellowInk.color, paperColor: Theme.lightYellowPaper.color),
+        ArcTheme(arcNumber: 4, inkColor: Theme.lightGrayInk.color, paperColor: Theme.lightGrayPaper.color)
+    ]
+    
 }
 
 enum Theme: String, CaseIterable, Identifiable {
     
-    case greenLight
-    case greenDark
-    case blueLight
-    case blueDark
-    case yellowLight
-    case yellowDark
-    case grayLight
-    case grayDark
+    case lightGreenInk
+    case lightGreenPaper
+    case lightBlueInk
+    case lightBluePaper
+    case lightYellowInk
+    case lightYellowPaper
+    case lightGrayInk
+    case lightGrayPaper
+    
+    case  darkGreenInk
+    case  darkGreenPaper
+    case  darkBlueInk
+    case  darkBluePaper
+    case  darkYellowInk
+    case  darkYellowPaper
+    case  darkGrayInk
+    case  darkGrayPaper
     
     var color: Color {
         Color(rawValue)
