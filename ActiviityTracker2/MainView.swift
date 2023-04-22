@@ -14,6 +14,7 @@ struct MainView: View {
     @State private var data = Activity.Data()
     @State private var isPresentingNewActivity = false
     @State private var isPresentingEditActivity = false
+    @State private var errorWrapper = ErrorWrapper.basicErrors[0]
     
     
     var body: some View {
@@ -67,37 +68,34 @@ struct MainView: View {
                     
                 }
                 .sheet(isPresented: $isPresentingNewActivity) {
-                    NavigationView {
-                        
-                        
+                   
                         if activities.count < 4 {
-                            AddView(data: $data)
-                                .toolbar {
-                                    ToolbarItem(placement: .cancellationAction) {
-                                        Button("Dismiss") {
-                                            isPresentingNewActivity = false
+                            
+                            NavigationView {
+                                AddView(data: $data)
+                                    .toolbar {
+                                        ToolbarItem(placement: .cancellationAction) {
+                                            Button("Dismiss") {
+                                                isPresentingNewActivity = false
+                                            }
+                                        }
+                                        ToolbarItem(placement: .confirmationAction) {
+                                            Button("Done") {
+                                                isPresentingNewActivity = false
+                                            }
                                         }
                                     }
-                                    ToolbarItem(placement: .confirmationAction) {
-                                        Button("Done") {
-                                            isPresentingNewActivity = false
-                                        }
-                                    }
-                                }
+                            }
+                            
+
                         }
                         else {
-                          ErrorView()
-                                .toolbar {
-                                    ToolbarItem(placement: .confirmationAction) {
-                                        Button("Dismiss") {
-                                            isPresentingNewActivity = false
-                                        }
-                                    }
-                                }
+                            ErrorView(errorWrapper: errorWrapper)
+
                         }
                         
 
-                    }
+                    
                 }
                 .sheet(isPresented: $isPresentingEditActivity) {
                     NavigationView {
