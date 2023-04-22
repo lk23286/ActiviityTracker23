@@ -25,8 +25,7 @@ struct MainHeaderView: View {
 
 struct MainHeaderView_Previews: PreviewProvider {
     
-    static var main: Main = Main(activities: Activity.darkSample)
-    
+     
     static var previews: some View {
         MainHeaderView(activity: Activity.lightSample[0])
     }

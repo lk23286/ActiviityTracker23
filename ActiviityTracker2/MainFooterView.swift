@@ -18,6 +18,7 @@ struct MainFooterView: View {
         List {
                 ForEach(activities) { activity in
                    MainFooterViewLine(activity: activity)
+                        .listRowBackground(activity.arcThem.paperColor)
                 }
            
         }
@@ -30,9 +31,7 @@ struct MainFooterView: View {
 
 struct MainFooterView_Previews: PreviewProvider {
     
-    static var main: Main = Main(activities: Activity.darkSample)
-    
-    static var activities: [Activity] = Activity.darkSample
+    static var activities: [Activity] = Activity.lightSample
     
     static var previews: some View {
         MainFooterView(activities: activities)

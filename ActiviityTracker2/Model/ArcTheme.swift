@@ -73,3 +73,9 @@ enum Theme: String, CaseIterable, Identifiable {
         name
     }
 }
+
+
+struct K {
+    static var backgroundGray = "bkgGray"
+}
+

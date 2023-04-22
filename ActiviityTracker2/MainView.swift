@@ -9,7 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     
-   @Binding var activities: [Activity]
+    @Binding var activities: [Activity]
+    
+    @State private var data = Activity.Data()
+    @State private var isPresentingNewActivity = false
+    @State private var isPresentingEditActivity = false
+    
     
     var body: some View {
         
@@ -17,30 +22,107 @@ struct MainView: View {
             
             List {
                 ForEach(activities) { activity in
-    
-                    NavigationLink(destination: SubView(subActivities: activity.subActivities ?? [])) {
-        
-                        MainHeaderView(activity: activity)
+                    
+                    if let subActivities = activity.subActivities {
+                        
+                        NavigationLink(destination: SubView(subActivities: subActivities, mainActivity: activity.name)) {
+                            MainHeaderView(activity: activity)
+                        }
+                        .listRowBackground(activity.arcThem.paperColor)
+                    } else {
+                        NavigationLink(destination: CounterView()) {
+                            MainHeaderView(activity: activity)
+                        }
+                        .listRowBackground(activity.arcThem.paperColor)
+                        
                     }
-                    .listRowBackground(activity.arcThem.paperColor)
+                    
                 }
             }
-
+            
             MainDiagramView(activities: activities)
             Spacer()
+            
             MainFooterView(activities: activities)
-        }
-        .background(Color(K.backgroundGray))
-        .navigationTitle("Main Activity")
+            
+                .background(Color(K.backgroundGray))
+                .navigationTitle("Main Activities")
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button {
+                            isPresentingNewActivity = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        
+                    }
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button {
+                            isPresentingEditActivity = true
+                        } label: {
+                            Text("Edit")
+                        }
+                        
+                    }
+                    
+                }
+                .sheet(isPresented: $isPresentingNewActivity) {
+                    NavigationView {
+                        
+                        
+                        if activities.count < 4 {
+                            AddView(data: $data)
+                                .toolbar {
+                                    ToolbarItem(placement: .cancellationAction) {
+                                        Button("Dismiss") {
+                                            isPresentingNewActivity = false
+                                        }
+                                    }
+                                    ToolbarItem(placement: .confirmationAction) {
+                                        Button("Done") {
+                                            isPresentingNewActivity = false
+                                        }
+                                    }
+                                }
+                        }
+                        else {
+                          ErrorView()
+                                .toolbar {
+                                    ToolbarItem(placement: .confirmationAction) {
+                                        Button("Dismiss") {
+                                            isPresentingNewActivity = false
+                                        }
+                                    }
+                                }
+                        }
+                        
 
-       
+                    }
+                }
+                .sheet(isPresented: $isPresentingEditActivity) {
+                    NavigationView {
+                        DetailEditView(data: $data)
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Dismiss") {
+                                        isPresentingEditActivity = false
+                                    }
+                                }
+                                ToolbarItem(placement: .confirmationAction) {
+                                    Button("Done") {
+                                        isPresentingEditActivity = false
+                                    }
+                                }
+                            }
+                    }
+                }
+        }
     }
-        
+    
 }
 
 struct MainView_Previews: PreviewProvider {
     
-    static var main: Main = Main(activities: Activity.lightSample)
     static var previews: some View {
         NavigationView {
             MainView(activities: .constant(Activity.lightSample))
@@ -49,6 +131,6 @@ struct MainView_Previews: PreviewProvider {
         
         
         
-      
+        
     }
 }
