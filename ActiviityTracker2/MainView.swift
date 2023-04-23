@@ -11,10 +11,11 @@ struct MainView: View {
     
     @Binding var activities: [Activity]
     
-    @State private var data = Activity.Data()
+    @State private var newActivityData = Activity.Data()
     @State private var isPresentingNewActivity = false
     @State private var isPresentingEditActivity = false
     @State private var errorWrapper = ErrorWrapper.basicErrors[0]
+    
     
     
     var body: some View {
@@ -72,7 +73,7 @@ struct MainView: View {
                         if activities.count < 4 {
                             
                             NavigationView {
-                                AddView(data: $data)
+                                AddView(data: $newActivityData)
                                     .toolbar {
                                         ToolbarItem(placement: .cancellationAction) {
                                             Button("Dismiss") {
@@ -99,7 +100,7 @@ struct MainView: View {
                 }
                 .sheet(isPresented: $isPresentingEditActivity) {
                     NavigationView {
-                        DetailEditView(data: $data)
+                        DetailEditView(data: $newActivityData)
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {
                                     Button("Dismiss") {

@@ -92,7 +92,7 @@ extension Activity {
                     Activity(name: "Swim", goal: 1, progress: 0.7, arcTheme: ArcTheme.lightSample[0])
             ],arcTheme: ArcTheme.lightSample[1]),
         Activity(name: "Meditation", goal: 5, progress: 3, arcTheme: ArcTheme.lightSample[2]),
-       Activity(name: "Sleep", goal: 5, progress: 4, arcTheme: ArcTheme.lightSample[3])
+      // Activity(name: "Sleep", goal: 5, progress: 4, arcTheme: ArcTheme.lightSample[3])
     
     ]
     
