@@ -23,7 +23,7 @@ struct MainView: View {
         VStack {
             
             List {
-                ForEach(activities) { activity in
+                ForEach($activities) { $activity in
                     
                     if let subActivities = activity.subActivities {
                         
@@ -83,6 +83,11 @@ struct MainView: View {
                                         ToolbarItem(placement: .confirmationAction) {
                                             Button("Done") {
                                                 isPresentingNewActivity = false
+                                                let newActivity = Activity(data: newActivityData)
+                                                activities.append(newActivity)
+                                                newActivityData = Activity.Data()
+                                                
+                                                
                                             }
                                         }
                                     }

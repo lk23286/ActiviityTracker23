@@ -39,7 +39,7 @@ extension Activity {
         var goal: Double = 0.0
         var progress: Double = 0.0
         var subActivities: [Activity]?
-        var arcThem: ArcTheme = ArcTheme.lightSample[0]
+        var arcThem: ArcTheme = ArcTheme.lightSample[3]
     }
     
     var data: Data {

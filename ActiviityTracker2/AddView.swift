@@ -11,12 +11,14 @@ struct AddView: View {
     
     @Binding var data: Activity.Data
     @State var goalHour: Double = 0
-    @State var goalMinute: Double = 1
+    @State var goalMinute: Double = 30
     
     var goal: Double {
         goalHour + (goalMinute / 60.0)
     }
     
+    
+
     @State var formatter = NumberFormatter()
    
     var body: some View {
@@ -30,6 +32,9 @@ struct AddView: View {
                         .onAppear {
                            formatter.maximumFractionDigits = 2
                         }
+                        .onDisappear(perform: {
+                            data.goal = goal
+                        })
                     Text("hours")
                         
                 }
