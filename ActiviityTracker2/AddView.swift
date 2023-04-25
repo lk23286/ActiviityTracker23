@@ -10,16 +10,9 @@ import SwiftUI
 struct AddView: View {
     
     @Binding var data: Activity.Data
-    @State var goalHour: Double = 0
-    @State var goalMinute: Double = 30
-    
-    var goal: Double {
-        goalHour + (goalMinute / 60.0)
-    }
-    
-    
 
     @State var formatter = NumberFormatter()
+    @State var newSubActivity = ""
    
     var body: some View {
  
@@ -28,31 +21,52 @@ struct AddView: View {
             Section("Main Activity") {
                 HStack {
                     TextField("Activity Name", text: $data.name)
-                    Text(formatter.string(from: goal as NSNumber) ?? "?")
-                        .onAppear {
-                           formatter.maximumFractionDigits = 2
-                        }
-                        .onDisappear(perform: {
-                            data.goal = goal
-                        })
-                    Text("hours")
-                        
+       
                 }
                 .font(.headline)
 
                 
                 HStack {
-                    Slider(value: $goalHour, in: 0...23, step: 1) {
+                    Slider(value: $data.goal, in: 0...23, step: 1) {
                         Text("Duration")
                     }
-                    Text("\(Int(goalHour)) hours")
+                    Text("\(Int(data.goal)) hours")
                 }
-                HStack {
-                    Slider(value: $goalMinute, in: 0...59, step: 1) {
-                        Text("Duration")
+
+            }
+            Section("Sub Activites") {
+                
+                 let subActivities = data.subActivities 
+                    
+                
+                 
+                    ForEach(data.subActivities!) { subactivity in
+                        Text(subactivity.name)
                     }
-                    Text("\(Int(goalMinute)) minutes")
-                }
+                    .onDelete { indices in
+                        data.subActivities!.remove(atOffsets: indices)
+                    }
+                    if subActivities.count < 3 {
+                        HStack {
+                            TextField("new sub activity", text: $newSubActivity)
+                            Button {
+                                withAnimation {
+                                    let activity = Activity.init(id: UUID(), name: "Hello", goal: 0.5, progress: 0, subActivities: nil, arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
+                                    data.subActivities!.append(activity)
+                                    newSubActivity = ""
+                                }
+                            } label: {
+                                Image(systemName: "plus.circle.fill")
+                            }
+                        }
+                      
+
+                    }
+                    
+                    
+                
+                
+
             }
 
         }
@@ -64,7 +78,8 @@ struct AddView: View {
 struct AddView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AddView(data: .constant(Activity.lightSample[0].data))
+        AddView(data: .constant(Activity.lightSample[1
+                                                    ].data))
         
     }
 }
