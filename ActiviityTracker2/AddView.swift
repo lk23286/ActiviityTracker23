@@ -13,6 +13,7 @@ struct AddView: View {
 
     @State var formatter = NumberFormatter()
     @State var newSubActivity = ""
+    @State var newSubActivityGoal = 30.0
    
     var body: some View {
  
@@ -27,10 +28,10 @@ struct AddView: View {
 
                 
                 HStack {
-                    Slider(value: $data.goal, in: 0...23, step: 1) {
+                    Slider(value: $data.goal, in: 0...(23 * 60), step: 1) {
                         Text("Duration")
                     }
-                    Text("\(Int(data.goal)) hours")
+                    Text("\(Int(data.goal)) min")
                 }
 
             }
@@ -41,7 +42,10 @@ struct AddView: View {
                 
                  
                     ForEach(data.subActivities) { subactivity in
-                        Text(subactivity.name)
+                        HStack {
+                            Text(subactivity.name)
+                            Text(" \(Int(subactivity.goal)) min")
+                        }
                     }
                     .onDelete { indices in
                         data.subActivities.remove(atOffsets: indices)
@@ -51,7 +55,7 @@ struct AddView: View {
                             TextField("new sub activity", text: $newSubActivity)
                             Button {
                                 withAnimation {
-                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: 0.5, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
+                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
                                     data.subActivities.append(activity)
                                     newSubActivity = ""
                                 }
@@ -59,19 +63,22 @@ struct AddView: View {
                                 Image(systemName: "plus.circle.fill")
                             }
                         }
-                      
-
                     }
-                    
-                    
-                
-                
-
             }
-
+            Section("Sub activitiy duration") {
+                
+                HStack {
+                    Slider(value: $newSubActivityGoal, in: 0...(23 * 60), step: 1) {
+                        Text("Duration")
+                    }
+                    Text("\(Int(newSubActivityGoal)) min")
+                }
+                
+            }
+            
+            
+            
         }
-
-        
     }
 }
 

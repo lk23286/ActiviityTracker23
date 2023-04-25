@@ -12,9 +12,10 @@ struct MainFooterViewLine: View {
     var activity: Activity
     
     private var name: String { activity.name }
-    private var goal: String { String(activity.goal) }
-    private var progress: String { String(activity.progress) }
+    private var goal: String { String(Int(activity.goal)) }
+    private var progress: String { String(Int(activity.progress)) }
     private var achievment: String { String(activity.achievement)}
+    
    
     
     
@@ -24,7 +25,7 @@ struct MainFooterViewLine: View {
             Text(progress)
             Text("/")
             Text(goal)
-            Text("hours")
+            Text("min")
             Text("\(achievment) %")
                
         }) .padding(.leading, 0.0)
@@ -38,7 +39,7 @@ struct MainFooterViewLine: View {
 
 struct MainFooterViewLine_Previews: PreviewProvider {
     
-    static let activity: Activity = Activity.darkSample[0]
+    static let activity: Activity = Activity.lightSample[0]
     
     
     static var previews: some View {

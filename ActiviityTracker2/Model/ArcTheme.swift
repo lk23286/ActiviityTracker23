@@ -28,22 +28,22 @@ struct ArcTheme {
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightGreenInk.color
             self.paperColor = Theme.lightGreenPaper.color
-            self.opacity = 1.0
+            self.opacity = 0.05
         case 2:
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightBlueInk.color
             self.paperColor = Theme.lightBluePaper.color
-            self.opacity = 1.0
+            self.opacity = 0.05
         case 3:
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightYellowInk.color
             self.paperColor = Theme.lightYellowPaper.color
-            self.opacity = 1.0
+            self.opacity = 0.05
         default:
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightGrayInk.color
             self.paperColor = Theme.lightGrayPaper.color
-            self.opacity = 1.0
+            self.opacity = 0.05
             
         }
     }
