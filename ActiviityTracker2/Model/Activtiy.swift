@@ -14,14 +14,14 @@ struct Activity: Identifiable {
     var name: String
     var goal: Double
     var progress: Double
-    var subActivities: [Activity]?
+    var subActivities: [Activity]
     var arcThem: ArcTheme
     
     var achievement: Int {
        Int( progress / goal * 100.0 )
     }
 
-    init(id: UUID = UUID(), name: String, goal: Double, progress: Double, subActivities: [Activity]? = nil, arcTheme: ArcTheme) {
+    init(id: UUID = UUID(), name: String, goal: Double, progress: Double, subActivities: [Activity] = [], arcTheme: ArcTheme) {
         self.id = id
         self.name = name
         self.goal = goal
@@ -38,7 +38,7 @@ extension Activity {
         var name: String = ""
         var goal: Double = 0.0
         var progress: Double = 0.0
-        var subActivities: [Activity]?
+        var subActivities: [Activity] = []
         var arcThem: ArcTheme = ArcTheme.lightSample[3]
     }
     

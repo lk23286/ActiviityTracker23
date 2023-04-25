@@ -25,9 +25,10 @@ struct MainView: View {
             List {
                 ForEach($activities) { $activity in
                     
-                    if let subActivities = activity.subActivities {
-                        
-                        NavigationLink(destination: SubView(subActivities: subActivities, mainActivity: activity.name)) {
+                    
+                    if !activity.subActivities.isEmpty {
+                       
+                        NavigationLink(destination: SubView(subActivities: activity.subActivities, mainActivity: activity.name)) {
                             MainHeaderView(activity: activity)
                         }
                         .listRowBackground(activity.arcThem.paperColor)

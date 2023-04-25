@@ -42,7 +42,7 @@ struct SubView_Previews: PreviewProvider {
     static var previews: some View {
         
         NavigationView {
-            SubView(subActivities:exampleActivity.subActivities!, mainActivity: exampleActivity.name)
+            SubView(subActivities:exampleActivity.subActivities, mainActivity: exampleActivity.name)
         }
         
         

@@ -40,19 +40,19 @@ struct AddView: View {
                     
                 
                  
-                    ForEach(data.subActivities!) { subactivity in
+                    ForEach(data.subActivities) { subactivity in
                         Text(subactivity.name)
                     }
                     .onDelete { indices in
-                        data.subActivities!.remove(atOffsets: indices)
+                        data.subActivities.remove(atOffsets: indices)
                     }
-                    if subActivities.count < 3 {
+                    if subActivities.count < 4 {
                         HStack {
                             TextField("new sub activity", text: $newSubActivity)
                             Button {
                                 withAnimation {
-                                    let activity = Activity.init(id: UUID(), name: "Hello", goal: 0.5, progress: 0, subActivities: nil, arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
-                                    data.subActivities!.append(activity)
+                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: 0.5, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
+                                    data.subActivities.append(activity)
                                     newSubActivity = ""
                                 }
                             } label: {
