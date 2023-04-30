@@ -11,7 +11,7 @@ struct MainEdit: View {
     
     @Binding var activites: [Activity]
     @State var editedData = Activity.Data()
-    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         
@@ -20,51 +20,33 @@ struct MainEdit: View {
             List {
                 
                 ForEach($activites) { $activity in
-                        
-                    NavigationLink(destination: AddView(data: $editedData)
+                    
+                    NavigationLink(destination:
+                                    AddView(data: $editedData)
                         .onAppear  {
                             editedData = activity.data
                         }
-                                   
-                        .navigationTitle(activity.name)
-                        .toolbar(content: {
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Done") {
-                                    
-                                }
-                            }
-                        
+                        .onDisappear(perform: {
+                            activity.update(from: editedData)
                         })
-                                   
-                    ) {
+                             
+                    )
+                    {
                         MainHeaderView(activity: activity)
-                            
-                        
-                            
                     }
                     .listRowBackground(activity.arcThem.paperColor)
-                    
-                    
-                }
-           
-                
-            }
-        
-            .navigationTitle("Main Edit")
-            .toolbar {
-                Button("Done") {
-                    
                 }
             }
         }
     }
 }
 
+
 struct MainEdit_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             MainEdit(activites: .constant(Activity.lightSample))
         }
-       
+        
     }
 }

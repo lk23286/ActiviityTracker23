@@ -11,7 +11,7 @@ struct AddView: View {
     
     @Binding var data: Activity.Data
 
-    @State var formatter = NumberFormatter()
+    
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
    
