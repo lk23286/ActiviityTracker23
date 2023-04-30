@@ -9,16 +9,32 @@ import SwiftUI
 
 struct DetailEditView: View {
     
-   @Binding var data: Activity.Data
+    @Binding var activity: Activity
     
     var body: some View {
-        Text("Detail Edit View")
+        
+        List {
+            
+            Section("Activity") {
+                
+                VStack {
+                    Text(activity.name)
+                 
+                }
+               
+            }
+            
+        
+            
+        }
+        
+        
     }
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(Activity.Data()))
+        DetailEditView(activity: .constant(Activity.lightSample[0]))
     }
 }
 

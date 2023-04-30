@@ -10,7 +10,7 @@ import SwiftUI
 struct SubView: View {
     
     var subActivities: [Activity]
-    var mainActivity: String
+    var mainActivityName: String
     
     var body: some View {
         
@@ -30,7 +30,7 @@ struct SubView: View {
             MainFooterView(activities: subActivities)
         }
         .background(Color(K.backgroundGray))
-        .navigationTitle(mainActivity)
+        .navigationTitle(mainActivityName)
     }
         
 }
@@ -42,7 +42,7 @@ struct SubView_Previews: PreviewProvider {
     static var previews: some View {
         
         NavigationView {
-            SubView(subActivities:exampleActivity.subActivities, mainActivity: exampleActivity.name)
+            SubView(subActivities:exampleActivity.subActivities, mainActivityName: exampleActivity.name)
         }
         
         

@@ -10,11 +10,13 @@ import SwiftUI
 struct MainView: View {
     
     @Binding var activities: [Activity]
+    @State private var editedActivites: [Activity] = []
     
     @State private var newActivityData = Activity.Data()
     @State private var isPresentingNewActivity = false
     @State private var isPresentingEditActivity = false
     @State private var errorWrapper = ErrorWrapper.basicErrors[0]
+   
     
     
     
@@ -25,10 +27,10 @@ struct MainView: View {
             List {
                 ForEach($activities) { $activity in
                     
-                    
+                   
                     if !activity.subActivities.isEmpty {
                        
-                        NavigationLink(destination: SubView(subActivities: activity.subActivities, mainActivity: activity.name)) {
+                        NavigationLink(destination: SubView(subActivities: activity.subActivities, mainActivityName: activity.name)) {
                             MainHeaderView(activity: activity)
                         }
                         .listRowBackground(activity.arcThem.paperColor)
@@ -62,6 +64,7 @@ struct MainView: View {
                     ToolbarItem(placement: .cancellationAction) {
                         Button {
                             isPresentingEditActivity = true
+                            editedActivites = activities
                         } label: {
                             Text("Edit")
                         }
@@ -82,7 +85,7 @@ struct MainView: View {
                                             }
                                         }
                                         ToolbarItem(placement: .confirmationAction) {
-                                            Button("Done") {
+                                            Button("Add") {
                                                 isPresentingNewActivity = false
                                                 let newActivity = Activity(data: newActivityData)
                                                 activities.append(newActivity)
@@ -106,7 +109,7 @@ struct MainView: View {
                 }
                 .sheet(isPresented: $isPresentingEditActivity) {
                     NavigationView {
-                        DetailEditView(data: $newActivityData)
+                        MainEdit(activites: $editedActivites)
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {
                                     Button("Dismiss") {
@@ -116,6 +119,7 @@ struct MainView: View {
                                 ToolbarItem(placement: .confirmationAction) {
                                     Button("Done") {
                                         isPresentingEditActivity = false
+                                        activities = editedActivites
                                     }
                                 }
                             }

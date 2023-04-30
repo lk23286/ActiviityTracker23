@@ -26,7 +26,6 @@ struct AddView: View {
                 }
                 .font(.headline)
 
-                
                 HStack {
                     Slider(value: $data.goal, in: 0...(23 * 60), step: 1) {
                         Text("Duration")
@@ -36,12 +35,9 @@ struct AddView: View {
 
             }
             Section("Sub Activites") {
-                
-                 let subActivities = data.subActivities 
-                    
-                
-                 
+               
                     ForEach(data.subActivities) { subactivity in
+
                         HStack {
                             Text(subactivity.name)
                             Text(" \(Int(subactivity.goal)) min")
@@ -50,12 +46,12 @@ struct AddView: View {
                     .onDelete { indices in
                         data.subActivities.remove(atOffsets: indices)
                     }
-                    if subActivities.count < 4 {
+                    if data.subActivities.count < 4 {
                         HStack {
                             TextField("new sub activity", text: $newSubActivity)
                             Button {
                                 withAnimation {
-                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: subActivities.count + 1))
+                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: data.subActivities.count + 1))
                                     data.subActivities.append(activity)
                                     newSubActivity = ""
                                 }
@@ -68,7 +64,7 @@ struct AddView: View {
             Section("Sub activitiy duration") {
                 
                 HStack {
-                    Slider(value: $newSubActivityGoal, in: 0...(23 * 60), step: 1) {
+                    Slider(value: $newSubActivityGoal, in: 0...data.goal + 1, step: 1) {
                         Text("Duration")
                     }
                     Text("\(Int(newSubActivityGoal)) min")
@@ -85,8 +81,7 @@ struct AddView: View {
 struct AddView_Previews: PreviewProvider {
     
     static var previews: some View {
-        AddView(data: .constant(Activity.lightSample[1
-                                                    ].data))
+        AddView(data: .constant(Activity.lightSample[1].data))
         
     }
 }
