@@ -16,10 +16,7 @@ struct MainView: View {
     @State private var isPresentingNewActivity = false
     @State private var isPresentingEditActivity = false
     @State private var errorWrapper = ErrorWrapper.basicErrors[0]
-   
-    
-    
-    
+
     var body: some View {
         
         VStack {
@@ -27,21 +24,18 @@ struct MainView: View {
             List {
                 ForEach($activities) { $activity in
                     
-                   
                     if !activity.subActivities.isEmpty {
-                       
+                     
                         NavigationLink(destination: SubView(subActivities: activity.subActivities, mainActivityName: activity.name)) {
                             MainHeaderView(activity: activity)
                         }
-                        .listRowBackground(activity.arcThem.paperColor)
+                        .listRowBackground(activity.arcThemeColor.paperColor)
                     } else {
                         NavigationLink(destination: CounterView()) {
                             MainHeaderView(activity: activity)
                         }
-                        .listRowBackground(activity.arcThem.paperColor)
-                        
+                        .listRowBackground(activity.arcThemeColor.paperColor)
                     }
-                    
                 }
             }
             
@@ -88,7 +82,27 @@ struct MainView: View {
                                             Button("Add") {
                                                 isPresentingNewActivity = false
                                                 var newActivity = Activity(data: newActivityData)
-                                                newActivity.arcThem = ArcTheme(arcNumber: activities.count + 1)
+                                                
+//                                                newActivity.arcThem = ArcTheme(arcNumber: activities.count + 1)
+                                                
+                                                switch activities.count {
+                                                case 1:
+                                                    newActivity.arcThemeColor = ArcThemeColor.lightBlueInk
+                                                case 2:
+                                                    newActivity.arcThemeColor = ArcThemeColor.lightGrayInk
+                                                case 3:
+                                                    newActivity.arcThemeColor = ArcThemeColor.lightGreenInk
+                                                default:
+                                                    newActivity.arcThemeColor = ArcThemeColor.lightYellowInk
+                                                    
+                                                    
+                                                }
+                                                
+                                                
+                                                
+                                                
+                                                
+                                                
                                                 activities.append(newActivity)
                                                 newActivityData = Activity.Data()
                                                 

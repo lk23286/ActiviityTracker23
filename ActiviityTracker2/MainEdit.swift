@@ -34,7 +34,7 @@ struct MainEdit: View {
                     {
                         MainHeaderView(activity: activity)
                     }
-                    .listRowBackground(activity.arcThem.paperColor)
+                    .listRowBackground(activity.arcThemeColor.paperColor)
                 }
                 .onDelete { indices in
                     activites.remove(atOffsets: indices)

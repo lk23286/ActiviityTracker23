@@ -10,19 +10,19 @@ import SwiftUI
 struct ArcView: View {
     
     var achivement: Int
-    var archTheme: ArcTheme
+    var archThemeColor: ArcThemeColor
 
     var body: some View {
         
-        DiagramArc(number: archTheme.arcNumber, percent: 100)
-            .stroke(archTheme.inkColor, lineWidth: 22)
-            .brightness(0.0)
-            .opacity(archTheme.opacity)
+        DiagramArc(number: archThemeColor.arcNumber, percent: 100)
+            .stroke(archThemeColor.paperColor, lineWidth: 22)
+            //.brightness(0.0)
+            //.opacity(archThemeColor.opacity)
            
             .overlay {
-                DiagramArc(number: archTheme.arcNumber, percent: achivement)
+                DiagramArc(number: archThemeColor.arcNumber, percent: achivement)
                     .rotation(Angle(degrees: -90))
-                    .stroke(archTheme.inkColor, lineWidth: 22)
+                    .stroke(archThemeColor.inkColor, lineWidth: 22)
             }
     }
 }
@@ -31,7 +31,6 @@ struct ArcView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        let arcTheme: ArcTheme = ArcTheme.lightSample[0]
-        ArcView( achivement: 30, archTheme: arcTheme)
+        ArcView( achivement: 30, archThemeColor: ArcThemeColor.lightBlueInk)
     }
 }

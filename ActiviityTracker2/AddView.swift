@@ -14,33 +14,33 @@ struct AddView: View {
     
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
-    @State var arcThemColorNew: ArcThemeColor
-   
+    
+    
     var body: some View {
- 
+        
         Form {
-           
+            
             Section("Main Activity") {
                 HStack {
                     TextField("Activity Name", text: $data.name)
-       
+                    
                 }
                 .font(.headline)
-
+                
                 HStack {
                     Slider(value: $data.goal, in: 0...(23 * 60), step: 1) {
                         Text("Duration")
                     }
                     Text("\(Int(data.goal)) min")
                 }
-              ThemePicker(selection: )
-
-            }
-          
-            Section("Sub Activites") {
-               
+                
+                
+                //  ArcTheme(arcNumber: data.subActivities.count + 1)
+                
+                Section("Sub Activites") {
+                    
                     ForEach(data.subActivities) { subactivity in
-
+                        
                         HStack {
                             Text(subactivity.name)
                             Text(" \(Int(subactivity.goal)) min")
@@ -54,7 +54,7 @@ struct AddView: View {
                             TextField("new sub activity", text: $newSubActivity)
                             Button {
                                 withAnimation {
-                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcTheme(arcNumber: data.subActivities.count + 1))
+                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcThemeColor.lightBlueInk )
                                     data.subActivities.append(activity)
                                     newSubActivity = ""
                                 }
@@ -63,20 +63,21 @@ struct AddView: View {
                             }
                         }
                     }
-            }
-            Section("Sub activitiy duration") {
-                
-                HStack {
-                    Slider(value: $newSubActivityGoal, in: 0...data.goal + 1, step: 1) {
-                        Text("Duration")
+                }
+                Section("Sub activitiy duration") {
+                    
+                    HStack {
+                        Slider(value: $newSubActivityGoal, in: 0...data.goal + 1, step: 1) {
+                            Text("Duration")
+                        }
+                        Text("\(Int(newSubActivityGoal)) min")
                     }
-                    Text("\(Int(newSubActivityGoal)) min")
+                    
                 }
                 
+                
+                
             }
-            
-            
-            
         }
     }
 }

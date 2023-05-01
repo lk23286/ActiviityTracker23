@@ -125,7 +125,7 @@ enum ArcThemeColor: String, CaseIterable, Identifiable {
     case lightYellowInk
     case lightGrayInk
     
-    var inkcolor: Color {
+    var inkColor: Color {
         Color(rawValue)
     }
     
@@ -137,9 +137,9 @@ enum ArcThemeColor: String, CaseIterable, Identifiable {
         case .lightBlueInk :
             color = ThemeColor.lightBluePaper.color
         case .lightYellowInk :
-            color = ThemeColor.lightBluePaper.color
+            color = ThemeColor.lightYellowPaper.color
         case .lightGrayInk :
-            color = ThemeColor.lightBluePaper.color
+            color = ThemeColor.lightGrayPaper.color
         }
         return color
     }
@@ -148,13 +148,13 @@ enum ArcThemeColor: String, CaseIterable, Identifiable {
         let number: Int
         switch self {
         case .lightGreenInk :
-            number = 1
-        case .lightBlueInk :
-            number = 2
-        case .lightYellowInk :
             number = 3
-        case .lightGrayInk :
+        case .lightBlueInk :
+            number = 1
+        case .lightYellowInk :
             number = 4
+        case .lightGrayInk :
+            number = 2
         }
         return number
   

@@ -17,10 +17,11 @@ struct MainDiagramView: View {
             .background(Color(K.backgroundGray)
             )
             .overlay {
+
                 ForEach(activities) { activity in
-                    ArcView(achivement: activity.achievement, archTheme: activity.arcThem)
-                    
+                        ArcView(achivement: activity.achievement, archThemeColor: activity.arcThemeColor)
                 }
+ 
             }
             .background(Color(K.backgroundGray))
     }
@@ -28,10 +29,10 @@ struct MainDiagramView: View {
 
 struct MainDiagramView_Previews: PreviewProvider {
     
-    static var activities: [Activity] = Activity.darkSample
-    static var arcThemes: [ArcTheme] = ArcTheme.lightSample
+   // static var activities: [Activity] = Activity.lightSample
+  
     
     static var previews: some View {
-        MainDiagramView(activities: activities)
+        MainDiagramView(activities: Activity.lightSample)
     }
 }

@@ -16,7 +16,7 @@ struct MainHeaderView: View {
         
             Text(activity.name)
                 .font(.title2)
-                .foregroundColor(activity.arcThem.inkColor)
+                .foregroundColor(activity.arcThemeColor.inkColor)
                 .fontWeight(.bold)
 
     }

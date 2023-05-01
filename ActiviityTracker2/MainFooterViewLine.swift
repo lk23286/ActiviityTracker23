@@ -29,7 +29,7 @@ struct MainFooterViewLine: View {
             Text("\(achievment) %")
                
         }) .padding(.leading, 0.0)
-            .foregroundColor(activity.arcThem.inkColor)
+            .foregroundColor(activity.arcThemeColor.inkColor)
             .font(.headline)
             .fontWeight(.bold)
             

@@ -18,7 +18,7 @@ struct MainFooterView: View {
         List {
                 ForEach(activities) { activity in
                    MainFooterViewLine(activity: activity)
-                        .listRowBackground(activity.arcThem.paperColor)
+                        .listRowBackground(activity.arcThemeColor.paperColor)
                 }
            
         }

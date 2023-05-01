@@ -18,12 +18,14 @@ struct SubView: View {
             List {
                 ForEach(subActivities) { activity in
                     
+                    
+                    
                     NavigationLink(destination: CounterView()) {
                         MainHeaderView(activity: activity)
-                            
+
                     }
-                    .listRowBackground(activity.arcThem.paperColor)
-                   
+                    .listRowBackground(activity.arcThemeColor.paperColor)
+
                 }
             }
             MainDiagramView(activities: subActivities)

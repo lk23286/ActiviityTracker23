@@ -20,7 +20,7 @@ struct ThemeView: View {
             Label(arcThemeColor.name, systemImage: "paintpalette")
                 .padding(4)
         }
-        .foregroundColor(arcThemeColor.inkcolor)
+        .foregroundColor(arcThemeColor.inkColor)
         .fixedSize(horizontal: false, vertical: true)
     }
 }
