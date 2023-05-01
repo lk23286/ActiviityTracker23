@@ -16,6 +16,7 @@
 		85594F4529F44C3800038643 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85594F4429F44C3800038643 /* ErrorView.swift */; };
 		85594F4729F44F7300038643 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85594F4629F44F7300038643 /* ErrorWrapper.swift */; };
 		8592970529FF8926004826C7 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592970429FF8926004826C7 /* ThemePicker.swift */; };
+		8592970729FFAB6C004826C7 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592970629FFAB6C004826C7 /* ThemeView.swift */; };
 		85AB8BE329E5E62F0066A2C8 /* ActiviityTracker2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */; };
 		85AB8BE729E5E6330066A2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB8BE629E5E6330066A2C8 /* Assets.xcassets */; };
 		85AB8BEA29E5E6330066A2C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AB8BE929E5E6330066A2C8 /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		85594F4429F44C3800038643 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		85594F4629F44F7300038643 /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		8592970429FF8926004826C7 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
+		8592970629FFAB6C004826C7 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		85AB8BDF29E5E62F0066A2C8 /* ActiviityTracker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiviityTracker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB8BE229E5E62F0066A2C8 /* ActiviityTracker2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviityTracker2App.swift; sourceTree = "<group>"; };
 		85AB8BE629E5E6330066A2C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				85594F4429F44C3800038643 /* ErrorView.swift */,
 				85594F4029F43FB900038643 /* AddView.swift */,
 				8592970429FF8926004826C7 /* ThemePicker.swift */,
+				8592970629FFAB6C004826C7 /* ThemeView.swift */,
 				8552AFBA29EB42B600337F41 /* DetailEditView.swift */,
 				8552AFB829EAFB7400337F41 /* CounterView.swift */,
 				8552AFB629EADF6900337F41 /* SubView.swift */,
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8592970729FFAB6C004826C7 /* ThemeView.swift in Sources */,
 				85594F4129F43FB900038643 /* AddView.swift in Sources */,
 				85AB8BF829E5F74A0066A2C8 /* MainHeaderView.swift in Sources */,
 				85AB8C0229E6D6EC0066A2C8 /* ArcView.swift in Sources */,

@@ -31,7 +31,7 @@ struct ArcView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        var arcTheme: ArcTheme = ArcTheme.lightSample[0]
+        let arcTheme: ArcTheme = ArcTheme.lightSample[0]
         ArcView( achivement: 30, archTheme: arcTheme)
     }
 }

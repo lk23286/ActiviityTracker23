@@ -14,6 +14,7 @@ struct AddView: View {
     
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
+    
    
     var body: some View {
  
@@ -32,6 +33,7 @@ struct AddView: View {
                     }
                     Text("\(Int(data.goal)) min")
                 }
+              
 
             }
           
