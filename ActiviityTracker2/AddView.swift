@@ -10,7 +10,7 @@ import SwiftUI
 struct AddView: View {
     
     @Binding var data: Activity.Data
-
+    
     
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
@@ -34,6 +34,7 @@ struct AddView: View {
                 }
 
             }
+          
             Section("Sub Activites") {
                
                     ForEach(data.subActivities) { subactivity in

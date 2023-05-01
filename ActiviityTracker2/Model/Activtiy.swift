@@ -36,7 +36,7 @@ extension Activity {
     
     struct Data {
         var name: String = ""
-        var goal: Double = 0.0
+        var goal: Double = 1.0
         var progress: Double = 0.0
         var subActivities: [Activity] = []
         var arcThem: ArcTheme = ArcTheme.lightSample[3]

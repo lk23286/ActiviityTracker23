@@ -87,7 +87,8 @@ struct MainView: View {
                                         ToolbarItem(placement: .confirmationAction) {
                                             Button("Add") {
                                                 isPresentingNewActivity = false
-                                                let newActivity = Activity(data: newActivityData)
+                                                var newActivity = Activity(data: newActivityData)
+                                                newActivity.arcThem = ArcTheme(arcNumber: activities.count + 1)
                                                 activities.append(newActivity)
                                                 newActivityData = Activity.Data()
                                                 

@@ -8,38 +8,53 @@
 import Foundation
 import SwiftUI
 
-struct ArcTheme {
+struct ArcTheme: Identifiable, CaseIterable {
+    static var allCases: [ArcTheme ] = [
+        
+        ArcTheme(arcNumber: 1, inkColor: Theme.lightGreenInk.color, paperColor: Theme.lightGreenPaper.color),
+        ArcTheme(arcNumber: 2, inkColor: Theme.lightBlueInk.color, paperColor: Theme.lightBluePaper.color),
+        ArcTheme(arcNumber: 3, inkColor: Theme.lightYellowInk.color, paperColor: Theme.lightYellowPaper.color),
+        ArcTheme(arcNumber: 4, inkColor: Theme.lightGrayInk.color, paperColor: Theme.lightGrayPaper.color)
+        
+    ]
+    
+    var id: UUID
     
     let arcNumber: Int
     let inkColor: Color
     let paperColor: Color
     let opacity: Double
     
-    init(arcNumber: Int, inkColor: Color, paperColor: Color, opacity: Double = 0.05) {
+    init(id: UUID = UUID(), arcNumber: Int, inkColor: Color, paperColor: Color, opacity: Double = 0.05) {
+        self.id = id
         self.arcNumber = arcNumber
         self.inkColor = inkColor
         self.paperColor = paperColor
         self.opacity = opacity
     }
     
-    init(arcNumber: Int) {
+    init(id: UUID = UUID(), arcNumber: Int) {
         switch arcNumber {
         case 1:
+            self.id = id
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightGreenInk.color
             self.paperColor = Theme.lightGreenPaper.color
             self.opacity = 0.05
         case 2:
+            self.id = id
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightBlueInk.color
             self.paperColor = Theme.lightBluePaper.color
             self.opacity = 0.05
         case 3:
+            self.id = id
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightYellowInk.color
             self.paperColor = Theme.lightYellowPaper.color
             self.opacity = 0.05
         default:
+            self.id = id
             self.arcNumber = arcNumber
             self.inkColor = Theme.lightGrayInk.color
             self.paperColor = Theme.lightGrayPaper.color
@@ -66,6 +81,13 @@ extension ArcTheme {
         ArcTheme(arcNumber: 2, inkColor: Theme.darkBlueInk.color, paperColor: Theme.darkBluePaper.color),
         ArcTheme(arcNumber: 3, inkColor: Theme.darkYellowInk.color, paperColor: Theme.darkYellowPaper.color),
         ArcTheme(arcNumber: 4, inkColor: Theme.darkGrayInk.color, paperColor: Theme.darkGrayPaper.color)
+    ]
+    
+    static var colorSelection: [Theme] = [
+        Theme.lightGreenInk,
+        Theme.lightBlueInk,
+        Theme.lightYellowInk,
+        Theme.lightGrayInk
     ]
     
 }
@@ -100,7 +122,29 @@ enum Theme: String, CaseIterable, Identifiable {
     var id: String {
         name
     }
+    
 }
+
+enum ArcThemeColor: String, CaseIterable, Identifiable {
+    
+    case lightGreenInk
+    case lightBlueInk
+    case lightYellowInk
+    case lightGrayInk
+    
+    var color: Color {
+        Color(rawValue)
+    }
+    
+    var name: String {
+        rawValue
+    }
+    var id: String {
+        name
+    }
+    
+}
+
 
 
 struct K {
