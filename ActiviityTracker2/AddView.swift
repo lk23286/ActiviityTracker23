@@ -11,7 +11,6 @@ struct AddView: View {
     
     @Binding var data: Activity.Data
     
-    
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
     
@@ -23,7 +22,6 @@ struct AddView: View {
             Section("Main Activity") {
                 HStack {
                     TextField("Activity Name", text: $data.name)
-                    
                 }
                 .font(.headline)
                 
@@ -33,12 +31,10 @@ struct AddView: View {
                     }
                     Text("\(Int(data.goal)) min")
                 }
-                
-                
-                //  ArcTheme(arcNumber: data.subActivities.count + 1)
-                
+                ThemePicker(selection: $data.arcThemeColor)
+            }
+            
                 Section("Sub Activites") {
-                    
                     ForEach(data.subActivities) { subactivity in
                         
                         HStack {
@@ -64,23 +60,22 @@ struct AddView: View {
                         }
                     }
                 }
-                Section("Sub activitiy duration") {
-                    
-                    HStack {
-                        Slider(value: $newSubActivityGoal, in: 0...data.goal + 1, step: 1) {
-                            Text("Duration")
-                        }
-                        Text("\(Int(newSubActivityGoal)) min")
+            
+            Section("Sub activitiy duration") {
+                
+                HStack {
+                    Slider(value: $newSubActivityGoal, in: 0...data.goal + 1, step: 1) {
+                        Text("Duration")
                     }
-                    
+                    Text("\(Int(newSubActivityGoal)) min")
                 }
-                
-                
-                
+            }
+
+            }
+
             }
         }
-    }
-}
+
 
 struct AddView_Previews: PreviewProvider {
     

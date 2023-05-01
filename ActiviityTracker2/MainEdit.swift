@@ -29,7 +29,7 @@ struct MainEdit: View {
                         .onDisappear(perform: {
                             activity.update(from: editedData)
                         })
-                             
+                                   
                     )
                     {
                         MainHeaderView(activity: activity)

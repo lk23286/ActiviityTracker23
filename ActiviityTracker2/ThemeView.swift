@@ -27,6 +27,6 @@ struct ThemeView: View {
 
 struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemeView(arcThemeColor: .lightGreenInk)
+        ThemeView(arcThemeColor: ArcThemeColor.lightBlueInk)
     }
 }

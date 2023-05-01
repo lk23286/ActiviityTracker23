@@ -81,7 +81,7 @@ extension Activity {
             Activity(name: "Swim", goal: 30, progress: 23, arcTheme: ArcThemeColor.lightBlueInk)
         ],arcTheme: ArcThemeColor.lightGrayInk),
         Activity(name: "Meditation", goal: 100, progress: 70, arcTheme: ArcThemeColor.lightGreenInk),
-        Activity(name: "Sleep", goal: 100, progress: 80, arcTheme: ArcThemeColor.lightYellowInk)
+       // Activity(name: "Sleep", goal: 100, progress: 80, arcTheme: ArcThemeColor.lightYellowInk)
     
     ]
     

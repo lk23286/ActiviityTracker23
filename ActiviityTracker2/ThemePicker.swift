@@ -15,11 +15,12 @@ struct ThemePicker: View {
         Picker("ArcThemeColor", selection: $selection) {
             ForEach(ArcThemeColor.allCases) { arcThemeColor in
                 
-                ThemeView(arcThemeColor: selection)
+                ThemeView(arcThemeColor: arcThemeColor)
+                    .tag(arcThemeColor)
               
             }
         }
-        //.pickerStyle(.wheel)
+        .pickerStyle(.wheel)
 
     }
 }
