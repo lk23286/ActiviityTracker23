@@ -8,15 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct ArcTheme: Identifiable, CaseIterable {
-    static var allCases: [ArcTheme ] = [
-        
-        ArcTheme(arcNumber: 1, inkColor: ThemeColor.lightGreenInk.color, paperColor: ThemeColor.lightGreenPaper.color),
-        ArcTheme(arcNumber: 2, inkColor: ThemeColor.lightBlueInk.color, paperColor: ThemeColor.lightBluePaper.color),
-        ArcTheme(arcNumber: 3, inkColor: ThemeColor.lightYellowInk.color, paperColor: ThemeColor.lightYellowPaper.color),
-        ArcTheme(arcNumber: 4, inkColor: ThemeColor.lightGrayInk.color, paperColor: ThemeColor.lightGrayPaper.color)
-        
-    ]
+struct ArcTheme: Identifiable {
+
     
     var id: UUID
     
@@ -164,11 +157,10 @@ enum ArcThemeColor: String, CaseIterable, Identifiable {
             number = 4
         }
         return number
-        
-    
-        
+  
     }
-    
+    var opacity: Double {  0.05 }
+
     
     
     var name: String {
@@ -177,10 +169,7 @@ enum ArcThemeColor: String, CaseIterable, Identifiable {
     var id: String {
         name
     }
-    
-    
-    
-    
+  
 }
 
 

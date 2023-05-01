@@ -14,7 +14,7 @@ struct AddView: View {
     
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
-    
+    @State var arcThemColorNew: ArcThemeColor
    
     var body: some View {
  
@@ -33,7 +33,7 @@ struct AddView: View {
                     }
                     Text("\(Int(data.goal)) min")
                 }
-              
+              ThemePicker(selection: )
 
             }
           

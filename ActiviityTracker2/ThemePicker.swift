@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ThemePicker: View {
-    @State var selection: ArcThemeColor
+    @Binding var selection: ArcThemeColor
     
     var body: some View {
         
@@ -16,10 +16,10 @@ struct ThemePicker: View {
             ForEach(ArcThemeColor.allCases) { arcThemeColor in
                 
                 ThemeView(arcThemeColor: selection)
-               // Label(arcThemeColor.name, systemImage: "paintpalette")
+              
             }
         }
-        .pickerStyle(.wheel)
+        //.pickerStyle(.wheel)
 
     }
 }
@@ -27,6 +27,6 @@ struct ThemePicker: View {
 struct ThemePicker_Previews: PreviewProvider {
     
     static var previews: some View {
-        ThemePicker(selection: ArcThemeColor.lightGreenInk)
+        ThemePicker(selection: .constant(ArcThemeColor.lightGreenInk) )
     }
 }
