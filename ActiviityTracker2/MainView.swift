@@ -117,7 +117,7 @@ struct MainView: View {
                                     }
                                 }
                                 ToolbarItem(placement: .confirmationAction) {
-                                    Button("Done") {
+                                    Button("Save") {
                                         isPresentingEditActivity = false
                                         activities = editedActivites
                                     }

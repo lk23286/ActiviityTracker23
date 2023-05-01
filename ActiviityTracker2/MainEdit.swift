@@ -36,6 +36,9 @@ struct MainEdit: View {
                     }
                     .listRowBackground(activity.arcThem.paperColor)
                 }
+                .onDelete { indices in
+                    activites.remove(atOffsets: indices)
+                }
             }
         }
     }
