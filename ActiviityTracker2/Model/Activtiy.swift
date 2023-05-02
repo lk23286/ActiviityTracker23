@@ -72,15 +72,15 @@ extension Activity {
 
     static let lightSample: [Activity] = [
         Activity(name: "Swift", goal: 100, progress: 50, subActivities: [
-            Activity(name: "Bible", goal: 60, progress: 45, arcTheme: ArcThemeColor.lightBlueInk),
-            Activity(name: "Project", goal: 60, progress: 20, arcTheme: ArcThemeColor.lightGrayInk),
-            Activity(name: "Udemy", goal: 90, progress: 50, arcTheme: ArcThemeColor.lightGreenInk),
-            Activity(name: "Education", goal: 30, progress: 20, arcTheme: ArcThemeColor.lightYellowInk)
-        ], arcTheme: ArcThemeColor.lightBlueInk),
+            Activity(name: "Bible", goal: 60, progress: 45, arcTheme: ArcThemeColor.lightGreenInk),
+            Activity(name: "Project", goal: 60, progress: 20, arcTheme: ArcThemeColor.lightBlueInk),
+            Activity(name: "Udemy", goal: 90, progress: 50, arcTheme: ArcThemeColor.lightYellowInk),
+            Activity(name: "Education", goal: 30, progress: 20, arcTheme: ArcThemeColor.lightGrayInk)
+        ], arcTheme: ArcThemeColor.lightGreenInk),
         Activity(name: "Sport", goal: 100, progress: 60,subActivities: [
             Activity(name: "Swim", goal: 30, progress: 23, arcTheme: ArcThemeColor.lightBlueInk)
-        ],arcTheme: ArcThemeColor.lightGrayInk),
-        Activity(name: "Meditation", goal: 100, progress: 70, arcTheme: ArcThemeColor.lightGreenInk),
+        ],arcTheme: ArcThemeColor.lightBlueInk),
+        Activity(name: "Meditation", goal: 100, progress: 70, arcTheme: ArcThemeColor.lightYellowInk),
        // Activity(name: "Sleep", goal: 100, progress: 80, arcTheme: ArcThemeColor.lightYellowInk)
     
     ]

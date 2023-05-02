@@ -31,6 +31,6 @@ struct ArcView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        ArcView( achivement: 30, archThemeColor: ArcThemeColor.lightBlueInk)
+        ArcView( achivement: 30, archThemeColor: ArcThemeColor.lightYellowInk)
     }
 }

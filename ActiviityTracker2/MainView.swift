@@ -83,26 +83,7 @@ struct MainView: View {
                                                 isPresentingNewActivity = false
                                                 var newActivity = Activity(data: newActivityData)
                                                 
-//                                                newActivity.arcThem = ArcTheme(arcNumber: activities.count + 1)
-                                                
-                                                switch activities.count {
-                                                case 1:
-                                                    newActivity.arcThemeColor = ArcThemeColor.lightBlueInk
-                                                case 2:
-                                                    newActivity.arcThemeColor = ArcThemeColor.lightGrayInk
-                                                case 3:
-                                                    newActivity.arcThemeColor = ArcThemeColor.lightGreenInk
-                                                default:
-                                                    newActivity.arcThemeColor = ArcThemeColor.lightYellowInk
-                                                    
-                                                    
-                                                }
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
+
                                                 activities.append(newActivity)
                                                 newActivityData = Activity.Data()
                                                 

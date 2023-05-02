@@ -25,6 +25,7 @@ struct AddView: View {
                     TextField("Activity Name", text: $data.name)
                 }
                 .font(.headline)
+                .foregroundColor(data.arcThemeColor.inkColor)
                 
                 HStack {
                     Slider(value: $data.goal, in: 0...(23 * 60), step: 1) {
@@ -42,6 +43,8 @@ struct AddView: View {
                             Text(subactivity.name)
                             Text(" \(Int(subactivity.goal)) min")
                         }
+                        .listRowBackground(subactivity.arcThemeColor.paperColor)
+                        .foregroundColor(subactivity.arcThemeColor.inkColor)
                     }
                     .onDelete { indices in
                         data.subActivities.remove(atOffsets: indices)
