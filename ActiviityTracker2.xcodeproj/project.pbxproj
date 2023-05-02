@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		85392CAF29FAB82500CCE823 /* MainEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85392CAE29FAB82500CCE823 /* MainEdit.swift */; };
-		8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB429E9D6C700337F41 /* ArcTheme.swift */; };
+		8552AFB529E9D6C800337F41 /* ArcThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB429E9D6C700337F41 /* ArcThemeColor.swift */; };
 		8552AFB729EADF6900337F41 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB629EADF6900337F41 /* SubView.swift */; };
 		8552AFB929EAFB7400337F41 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFB829EAFB7400337F41 /* CounterView.swift */; };
 		8552AFBB29EB42B600337F41 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8552AFBA29EB42B600337F41 /* DetailEditView.swift */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		85392CAE29FAB82500CCE823 /* MainEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEdit.swift; sourceTree = "<group>"; };
-		8552AFB429E9D6C700337F41 /* ArcTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcTheme.swift; sourceTree = "<group>"; };
+		8552AFB429E9D6C700337F41 /* ArcThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcThemeColor.swift; sourceTree = "<group>"; };
 		8552AFB629EADF6900337F41 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		8552AFB829EAFB7400337F41 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		8552AFBA29EB42B600337F41 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			children = (
 				85AB8C0529E70A2E0066A2C8 /* DiagramArc.swift */,
 				85AB8BFF29E6C4120066A2C8 /* Activtiy.swift */,
-				8552AFB429E9D6C700337F41 /* ArcTheme.swift */,
+				8552AFB429E9D6C700337F41 /* ArcThemeColor.swift */,
 				85594F4629F44F7300038643 /* ErrorWrapper.swift */,
 			);
 			path = Model;
@@ -202,7 +202,7 @@
 				85AB8C0229E6D6EC0066A2C8 /* ArcView.swift in Sources */,
 				8592970529FF8926004826C7 /* ThemePicker.swift in Sources */,
 				85AB8BFE29E67B380066A2C8 /* MainFooterViewLine.swift in Sources */,
-				8552AFB529E9D6C800337F41 /* ArcTheme.swift in Sources */,
+				8552AFB529E9D6C800337F41 /* ArcThemeColor.swift in Sources */,
 				85AB8BF629E5F31E0066A2C8 /* MainView.swift in Sources */,
 				85AB8BFA29E5F77A0066A2C8 /* MainDiagramView.swift in Sources */,
 				85AB8C0029E6C4130066A2C8 /* Activtiy.swift in Sources */,

@@ -13,6 +13,7 @@ struct AddView: View {
     
     @State var newSubActivity = ""
     @State var newSubActivityGoal = 30.0
+    @State var newSubActivityColor: ArcThemeColor = .lightGrayInk
     
     
     var body: some View {
@@ -50,7 +51,7 @@ struct AddView: View {
                             TextField("new sub activity", text: $newSubActivity)
                             Button {
                                 withAnimation {
-                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: ArcThemeColor.lightBlueInk )
+                                    let activity = Activity.init(id: UUID(), name: newSubActivity, goal: newSubActivityGoal, progress: 0, subActivities: [], arcTheme: newSubActivityColor )
                                     data.subActivities.append(activity)
                                     newSubActivity = ""
                                 }
@@ -69,6 +70,7 @@ struct AddView: View {
                     }
                     Text("\(Int(newSubActivityGoal)) min")
                 }
+                ThemePicker(selection: $newSubActivityColor)
             }
 
             }
